@@ -1,5 +1,6 @@
 package com.userservice.UserService3.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //import com.lcwd.user.service.entities.Rating;
@@ -10,6 +11,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -39,10 +41,12 @@ public class User {
     private String email;
     @Column(name = "ABOUT")
     private String about;
-    //other user properties that you want
+    //other user properties that I want
 
-//    @Transient
-//    private List<Rating> ratings=new ArrayList<>();
+    // TRansient menaing is not to store in the database
+    @Transient
+    private List<Rating> ratings = new ArrayList<>();
+    
 
 
 }
